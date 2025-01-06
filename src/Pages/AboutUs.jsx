@@ -1,13 +1,16 @@
 import React from "react";
-import HeroSection from "../Components/HeroForOthers";
-import AboutUs from "../Components/About";
+import AboutUs from "../Components/MileStone";
 import HowWeDeliverSection from "../Components/HowDeliver";
 import ContactForm from "../Components/ContactForm";
 import { useState, useEffect } from "react";
-
+import Header from "../Components/Header";
+import Person1 from "../assets/t1.jpg";
+import Person2 from "../assets/t2.jpg";
+import Person3 from "../assets/t3.jpg";
+import Person4 from "../assets/t4.jpg";
 const AboutPage = () => (
   <div>
-    <HeroSection />
+    <Header />
     <MeetOurTeam />
     <AboutUs />
     <HowWeDeliverSection />
@@ -17,60 +20,15 @@ const AboutPage = () => (
 
 export default AboutPage;
 
-const teamMembers = [
-  {
-    id: 1,
-    name: "Member Name 1",
-    position: "Position 1",
-    image:
-      "https://img.freepik.com/premium-photo/handsome-senior-business-man-with-crossed-arms-smiling-camera_972478-9472.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-  },
-  {
-    id: 2,
-    name: "Member Name 2",
-    position: "Position 2",
-    image:
-      "https://img.freepik.com/premium-photo/handsome-senior-business-man-with-crossed-arms-smiling-camera_972478-9472.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-  },
-  {
-    id: 3,
-    name: "Member Name 3",
-    position: "Position 3",
-    image:
-      "https://img.freepik.com/premium-photo/handsome-senior-business-man-with-crossed-arms-smiling-camera_972478-9472.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-  },
-  {
-    id: 4,
-    name: "Member Name 4",
-    position: "Position 4",
-    image:
-      "https://img.freepik.com/premium-photo/handsome-senior-business-man-with-crossed-arms-smiling-camera_972478-9472.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-  },
-  {
-    id: 5,
-    name: "Member Name 5",
-    position: "Position 5",
-    image:
-      "https://img.freepik.com/premium-photo/handsome-senior-business-man-with-crossed-arms-smiling-camera_972478-9472.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-  },
-  {
-    id: 6,
-    name: "Member Name 6",
-    position: "Position 6",
-    image:
-      "https://img.freepik.com/premium-photo/handsome-senior-business-man-with-crossed-arms-smiling-camera_972478-9472.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-  },
-];
-
 const MeetOurTeam = () => {
   return (
-    <div className="lg:h-[80vh] w-[100vw]  relative flex justify-center h-[80vh]">
-      <div className="h-[100%] w-[90%] bg-white absolute -top-20 2xl:-top-36 z-20 rounded-xl flex lg:flex-row flex-col">
-        <div className="h-[100%] lg:w-[30%]  rounded-xl flex justify-center items-center flex-col p-8  gap-10">
+    <div className="lg:h-[80vh] w-[100vw]  relative flex justify-center h-[80vh] mb-16 mt-16">
+      <div className="h-[100%] w-[90%] bg-white  -top-20 2xl:-top-36 z-20 rounded-xl flex lg:flex-row flex-col">
+        <div className="h-[100%] lg:w-[30%]  rounded-xl flex justify-start items-center flex-col p-8  gap-10">
           <h2 className="text-5xl 2xl:text-6xl font-bold  text-center font-oxanium text-gray-800">
             Meet Our Team
           </h2>
-          <p className="text-md 2xl:text-xl  text-justify">
+          <p className="text-2xl 2xl:text-4xl  text-justify font-bir">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat
             voluptate at voluptatibus fugiat officia quibusdam neque aspernatur
             eaque quod dolorem, voluptatem nostrum, earum expedita voluptates
@@ -81,8 +39,7 @@ const MeetOurTeam = () => {
           <div className="flex h-[100%] w-[100%] gap-10  justify-center items-center lg:flex-row flex-col">
             <div
               style={{
-                backgroundImage:
-                  'url("https://img.freepik.com/premium-photo/professional-males-colleagues-hd-8k-wallpaper-stock-photographic-image_1033957-29111.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid")',
+                backgroundImage: `url(${Person1})`,
                 backgroundSize: "cover", // Cover the entire div
                 backgroundPosition: "center",
               }}
@@ -93,8 +50,7 @@ const MeetOurTeam = () => {
             </div>
             <div
               style={{
-                backgroundImage:
-                  'url("https://img.freepik.com/premium-photo/professional-males-colleagues-hd-8k-wallpaper-stock-photographic-image_1033957-29111.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid")',
+                backgroundImage: `url(${Person2})`,
                 backgroundSize: "cover", // Cover the entire div
                 backgroundPosition: "center",
               }}
@@ -111,8 +67,7 @@ const MeetOurTeam = () => {
           <div className=" h-[100%] w-[100%] gap-10  justify-center items-center hidden md:flex ">
             <div
               style={{
-                backgroundImage:
-                  'url("https://img.freepik.com/premium-photo/professional-males-colleagues-hd-8k-wallpaper-stock-photographic-image_1033957-29111.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid")',
+                backgroundImage: `url(${Person3})`,
                 backgroundSize: "cover", // Cover the entire div
                 backgroundPosition: "center",
               }}
@@ -123,8 +78,7 @@ const MeetOurTeam = () => {
             </div>
             <div
               style={{
-                backgroundImage:
-                  'url("https://img.freepik.com/premium-photo/professional-males-colleagues-hd-8k-wallpaper-stock-photographic-image_1033957-29111.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid")',
+                backgroundImage: `url(${Person4})`,
                 backgroundSize: "cover", // Cover the entire div
                 backgroundPosition: "center",
               }}
@@ -135,8 +89,7 @@ const MeetOurTeam = () => {
             </div>
             <div
               style={{
-                backgroundImage:
-                  'url("https://img.freepik.com/premium-photo/professional-males-colleagues-hd-8k-wallpaper-stock-photographic-image_1033957-29111.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid")',
+                backgroundImage: `url(${Person1})`,
                 backgroundSize: "cover", // Cover the entire div
                 backgroundPosition: "center",
               }}

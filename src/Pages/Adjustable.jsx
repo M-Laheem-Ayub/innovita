@@ -3,9 +3,33 @@ import HeroSection from "../Components/HeroForOthers";
 import MileStone from "../Components/MileStone";
 import Testimonial from "../Components/Testimonial";
 import ContactForm from "../Components/ContactForm";
+import Pintrest from "../Components/Pintrest";
 
-function Outdoor() {
+function Adjustable() {
+  const contentData = [
+    {
+      heading: "Heading 1",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.",
+      img: "https://img.freepik.com/free-photo/handcrafted-wooden-decorative-vase_23-2151003160.jpg?uid=R112225553&ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
+    },
+    {
+      heading: "Heading 2",
+      text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+      img: "https://img.freepik.com/free-photo/handcrafted-wooden-decorative-vase_23-2151003160.jpg?uid=R112225553&ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
+    },
+    {
+      heading: "Heading 3",
+      text: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
+      img: "https://img.freepik.com/free-photo/handcrafted-wooden-decorative-vase_23-2151003160.jpg?uid=R112225553&ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
+    },
+  ];
   const [isMobile, setIsMobile] = useState(false);
+  const [obj, setObj] = useState({
+    img: "https://img.freepik.com/free-photo/interior-design-neoclassical-style-with-furnishings-decor_23-2151199366.jpg?uid=R112225553&ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
+    title: "Adjustable-Louver-Pergolas",
+    description:
+      "Explore our elegant outdoor spaces designed for relaxation and entertainment. Stylish, permanent shading solution with durable aluminum louvers Offers 40% heat reduction and requires minimal maintenance.",
+  });
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,46 +47,40 @@ function Outdoor() {
   return (
     <div>
       <div className="z-0">
-        <HeroSection />
+        <HeroSection
+          img={obj.img}
+          title={obj.title}
+          description={obj.description}
+        />
       </div>
-
-      <div className="w-screen lg:h-80 2xl:h-96 h-[50vh] flex justify-center relative z-20 mb-20">
-        <div
-          className={`w-2/3 h-[100%] flex flex-col-reverse mt-12 gap-20 lg:flex-row bg-white rounded-2xl lg:p-5 ${
-            !isMobile ? "absolute -top-28 2xl:-top-[10rem]" : "relative"
-          }`}
-        >
-          <div className="h-[100%] lg:w-[50%]">
-            <h2 className="2xl:text-5xl text-3xl font-bold font-oxanium text-gray-800 mb-4">
-              Adjustable Louver Pergolas
-            </h2>
-            <ul className="list-decimal list-inside text-gray-600 2xl:text-xl">
-              <li>Flexible design to adjust shading as needed</li>
-              <li>High-quality, rust-resistant materials</li>
-              <li>Seamless integration with your existing outdoor space</li>
-              <li>Motorized options available for ease of use</li>
-              <li>
-                Can reduce up to 40% of heat exposure, making your outdoor area
-                cooler and more comfortable during the scorching UAE summers
-              </li>
-            </ul>
-          </div>
-          {!isMobile && (
+      <section className="lg:p-24 lg:pb-0 w-[100vw]">
+        <div className="container mx-auto">
+          {contentData.map((item, index) => (
             <div
-              className="lg:h-[100%] lg:w-[50%] w-[100%] h-[80%] rounded-2xl"
-              style={{
-                backgroundImage:
-                  "url(https://img.freepik.com/premium-photo/texture-vintage-blue-door-background-classic-louver-with-horizontal-pattern_459897-3860.jpg?uid=R112225553&ga=GA1.1.2079436003.1694496204&semt=ais_hybrid)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            ></div>
-          )}
+              key={index}
+              className={`flex items-center mb-16 bg-yellow-50 ${
+                index % 2 === 1 ? "flex-row-reverse" : ""
+              }`}
+            >
+              <div className=" md:w-1/2 flex justify-center w-[50%]">
+                <img
+                  src={item.img}
+                  alt={`Image for ${item.heading}`}
+                  className="w-96 h-60 rounded-lg shadow-lg"
+                />
+              </div>
+              <div className="w-[50%] md:w-1/2 pl-8">
+                <h2 className="text-3xl font-semibold mb-4 ">{item.heading}</h2>
+                <p className="text-lg text-gray-700 text-justify">
+                  {item.text}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-
+      </section>
       <div>
-        <PinterestPhotoGrid />
+        <Pintrest />
       </div>
 
       <MileStone />
@@ -72,54 +90,4 @@ function Outdoor() {
   );
 }
 
-export default Outdoor;
-
-const PinterestPhotoGrid = () => {
-  const images = [
-    "https://img.freepik.com/free-photo/picture-frame-by-velvet-armchair_53876-132788.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-    "https://img.freepik.com/free-photo/blue-armchair-against-blue-wall-living-room-interior-elegant-interior-design-with-copy-space-ai-generative_123827-23719.jpg?uid=R112225553&ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-    "https://img.freepik.com/free-photo/photorealistic-wooden-house-interior-with-timber-decor-furnishings_23-2151263537.jpg?t=st=1735160143~exp=1735163743~hmac=70b4a67c965b4f39fb228e0f3861dd75c1b2bf248ee380f7cd7a617d22e0c2e0&w=740",
-    "https://img.freepik.com/free-photo/view-house-lamp-with-futuristic-design_23-2151037461.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-    "https://img.freepik.com/premium-photo/modern-beautiful-interior-room-with-light-walls-bright-design-scandinavian-style_609637-116.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-    "https://img.freepik.com/free-photo/3d-modern-lamp-design_23-2151047612.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-    "https://img.freepik.com/free-photo/red-black-room-with-white-floor-black-walls_1340-25485.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-    "https://img.freepik.com/free-photo/3d-modern-lamp-design_23-2151047547.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-  ];
-
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 640);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  return (
-    <div className="p-6">
-      <h2 className="2xl:text-5xl lg:text-left text-center text-5xl font-bold font-oxanium text-gray-800 mb-4">
-        Related Projects
-      </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className="relative overflow-hidden rounded-lg shadow-lg"
-          >
-            <img
-              src={image}
-              alt={`Pinterest-style item ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+export default Adjustable;

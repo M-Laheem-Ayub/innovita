@@ -8,9 +8,7 @@ import HomePage from "./Pages/HomePage";
 import AboutPage from "./Pages/AboutUs"; // Example route
 import ServicePage from "./Pages/ServicePage";
 import Projects from "./Pages/Projects";
-import Adjust from "./Pages/Adjustable";
-import Fixed from "./Pages/Fixed";
-import Roof from "./Pages/Roof";
+
 function App() {
   const [showPreloader, setShowPreloader] = useState(true);
   const [isShaking, setIsShaking] = useState(false);
@@ -52,7 +50,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPreloader(false);
-    }, 100);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -82,9 +80,6 @@ function App() {
               <Route path="/About" element={<AboutPage />} />
               <Route path="/Services" element={<ServicePage />} />
               <Route path="/Projects" element={<Projects />} />
-              <Route path="/Adjustable-Louver-Pergolas" element={<Adjust />} />
-              <Route path="/Fixed-Louver-Pergolas" element={<Fixed />} />
-              <Route path="/Roof" element={<Roof />} />
             </Routes>
           </>
         )}

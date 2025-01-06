@@ -1,6 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import P1 from "../assets/portfolio/P1.jpg";
+import P2 from "../assets/portfolio/P2.jpg";
+import P3 from "../assets/portfolio/P3.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,19 +14,16 @@ const PortfolioSlider = () => {
   // Array of images for left and right cards
   const images = [
     {
-      right:
-        "https://img.freepik.com/free-photo/modern-styled-entryway_23-2150695915.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-      left: "https://img.freepik.com/free-photo/modern-styled-entryway_23-2150695915.jpg?ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
+      right: P1,
+      left: P1,
     },
     {
-      right:
-        "https://img.freepik.com/free-photo/stylish-scandinavian-living-room-with-design-mint-sofa-furnitures-mock-up-poster-map-plants-eleg_1258-152152.jpg?uid=R112225553&ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-      left: "https://img.freepik.com/free-photo/stylish-scandinavian-living-room-with-design-mint-sofa-furnitures-mock-up-poster-map-plants-eleg_1258-152152.jpg?uid=R112225553&ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
+      right: P2,
+      left: P2,
     },
     {
-      left: "https://img.freepik.com/premium-photo/illustration-living-room-interior_252025-145822.jpg?uid=R112225553&ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
-      right:
-        "https://img.freepik.com/premium-photo/illustration-living-room-interior_252025-145822.jpg?uid=R112225553&ga=GA1.1.2079436003.1694496204&semt=ais_hybrid",
+      left: P3,
+      right: P3,
     },
   ];
 
@@ -91,7 +91,9 @@ const PortfolioSlider = () => {
       </h2>
       <h2 className="text-xl md:text-3xl font-bold font-oxanium text-gray-800 mb-10">
         Our Work
-        <span className="font-bir lg:text-[10vh] text-[7vh]"> speaks</span>
+        <span className="font-bir lg:text-[10vh] text-[7vh] bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 text-transparent bg-clip-text ml-3">
+          speaks
+        </span>
       </h2>
 
       {images.map((image, index) => (
@@ -102,7 +104,7 @@ const PortfolioSlider = () => {
           {/* Left Card */}
           <div
             ref={(el) => (leftCards.current[index] = el)}
-            className="w-[80%]  h-[100%] bg-orange-400 shadow-lg overflow-hidden absolute"
+            className="w-[80%]  h-[100%]  shadow-lg overflow-hidden absolute"
             style={{
               clipPath: "polygon(0 0, 0% 100%, 100% 100%)", // Bottom triangular cut
             }}
@@ -117,7 +119,7 @@ const PortfolioSlider = () => {
           {/* Right Card */}
           <div
             ref={(el) => (rightCards.current[index] = el)}
-            className="w-[80%]  h-full bg-orange-400 shadow-lg overflow-hidden absolute"
+            className="w-[80%]  h-full  shadow-lg overflow-hidden absolute"
             style={{
               clipPath: "polygon(100% 100%, 100% 0, 0 0)", // Top triangular cut
             }}

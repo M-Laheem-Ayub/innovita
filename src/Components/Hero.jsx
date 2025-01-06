@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Header from "./Header";
-import Hero1 from "../assets/hero1.jpg";
-import Hero2 from "../assets/hero2.jpg";
-import Hero3 from "../assets/hero3.jpg";
-import Hero4 from "../assets/hero6.jpg";
-import Hero5 from "../assets/hero5.jpg";
+import H1 from "../assets/Hero/H1.jpg";
+import H2 from "../assets/Hero/H2.jpg";
+import H3 from "../assets/Hero/H3.jpg";
+import H4 from "../assets/Hero/H4.jpg";
+import H5 from "../assets/Hero/H5.jpg";
+import H6 from "../assets/Hero/H6.jpg";
+
 const HeroSection = () => {
-  const images = [
-    Hero1, // Image 5
-    Hero2, // Image 5
-    Hero3, // Image 5
-    Hero4, // Image 5
-    Hero5, // Image 5
-  ];
+  const images = [H1, H2, H3, H4, H5, H6];
   const texts = [
     {
       title: "Adjustable Louvered Pergolas",
@@ -23,7 +18,7 @@ const HeroSection = () => {
     {
       title: "Fixed Louver Pergolas",
       description:
-        " Stylish, permanent shading solution with durable aluminum louvers. Offers 40% heat reduction and requires minimal maintenance.",
+        "Stylish, permanent shading solution with durable aluminum louvers. Offers 40% heat reduction and requires minimal maintenance.",
     },
     {
       title: "Motorized Screens and Blinds",
@@ -45,54 +40,26 @@ const HeroSection = () => {
       description:
         "Weather-resistant sheds with customizable sizes for vehicle protection. Reduces heat by 30% and ensures a cooler car interior.",
     },
-    {
-      title: "Custom Designs for Commercial and Residential Spaces",
-      description:
-        "Maximize your storage options with custom-built cabinetry designed to fit your unique space and style.",
-    },
   ];
 
-  const [bgImage, setBgImage] = useState(images[0]); // Hero background (initially image 1)
-  const [divImages, setDivImages] = useState(images.slice(1)); // All divs background (initially image 2 onward)
-  const [currentText, setCurrentText] = useState(texts[0]); // Initial text (first in the array)
-  const [screenSize, setScreenSize] = useState("desktop"); // Track screen size: "mobile" or "desktop"
-
-  useEffect(() => {
-    const updateScreenSize = () => {
-      if (window.innerWidth <= 768) {
-        setScreenSize("mobile");
-      } else {
-        setScreenSize("desktop");
-      }
-    };
-
-    updateScreenSize(); // Initial check
-    window.addEventListener("resize", updateScreenSize); // Update on resize
-    return () => window.removeEventListener("resize", updateScreenSize); // Cleanup
-  }, []);
+  const [bgImageIndex, setBgImageIndex] = useState(0); // Index for the current background image
+  const [textIndex, setTextIndex] = useState(0); // Index for the current text
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setDivImages((prevDivImages) => {
-        setBgImage(prevDivImages[prevDivImages.length - 1]);
-        return [...prevDivImages.slice(1), prevDivImages[0]];
-      });
+      setBgImageIndex((prevIndex) => (prevIndex + 1) % images.length); // Cycle through images
+      setTextIndex((prevIndex) => (prevIndex + 1) % texts.length); // Cycle through texts
+    }, 2000); // Change every 2 seconds
 
-      setCurrentText((prevText) => {
-        const nextIndex = (texts.indexOf(prevText) + 1) % texts.length;
-        return texts[nextIndex];
-      });
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, [images.length, texts.length]);
 
   return (
     <>
       <div
-        className=" h-[70vh] 2xl:h-[100vh] lg:h-[100vh] w-[100%] flex justify-end gap-2 items-end pr-4 relative 2xl:mb-14"
+        className="h-[70vh] 2xl:h-[100vh] lg:h-[100vh] w-full flex justify-end gap-2 items-end pr-4 relative 2xl:mb-14"
         style={{
-          backgroundImage: `url(${bgImage})`,
+          backgroundImage: `url(${images[bgImageIndex]})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -106,15 +73,18 @@ const HeroSection = () => {
         ></div>
 
         <div className="absolute top-0 left-0 lg:left-[3rem] right-0 bottom-0 flex flex-col justify-center items-start text-start lg:w-[40%] w-[90%] text-white z-10 p-10 lg:p-4">
-          <h1 className="font-extrabold ">_________</h1>
+          <h1 className="font-extrabold font-bir -mb-5 text-xl">
+            Our Services
+          </h1>
+          <h1 className="font-extrabold font-bir">____________</h1>
           <h1 className="text-5xl 2xl:text-6xl font-bold font-oxanium mb-4 mt-5">
-            {currentText.title}
+            {texts[textIndex].title}
           </h1>
           <p className="text-[0.8rem] 2xl:text-[1.3rem] font-inter mb-6">
-            {currentText.description}
+            {texts[textIndex].description}
           </p>
           <button
-            className="px-4 py-2 border-[1px] text-white font-normal bg-black text-sm 2xl:text-lg  font-oxanium rounded-lg hover:bg-black transition duration-300 transform hover:-rotate-2 ease-in-out hover:scale-110 hover:shadow-lg"
+            className="px-4 py-2 border-[1px] text-white font-normal bg-black text-sm 2xl:text-lg font-oxanium rounded-lg hover:bg-black transition duration-300 transform hover:-rotate-2 ease-in-out hover:scale-110 hover:shadow-lg"
             onClick={() => {
               const section = document.getElementById("service");
               if (section) {

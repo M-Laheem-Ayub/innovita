@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import CountUp from "react-countup";
 import About from "../assets/Contact.jpg";
-
+import C1 from "../assets/Clients/C1.png";
+import C2 from "../assets/Clients/C2.png";
+import C3 from "../assets/Clients/C3.png";
+import C4 from "../assets/Clients/C4.png";
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState(false);
   const statsRef = useRef(null);
@@ -66,7 +69,7 @@ const AboutUs = () => {
           <div className="flex flex-col items-start p-6 rounded-lg">
             <h3 className="text-2xl 2xl:text-4xl font-semibold text-white font-oxanium">
               {isVisible && (
-                <CountUp start={0} end={8000} suffix="+" duration={5} />
+                <CountUp start={0} end={8000} suffix="+" duration={3} />
               )}
             </h3>
             <p className="text-white 2xl:text-2xl text-left font-extralight">
@@ -86,7 +89,7 @@ const AboutUs = () => {
           <div className="flex flex-col items-start p-6 rounded-lg">
             <h3 className="text-2xl 2xl:text-4xl font-semibold text-white font-oxanium">
               {isVisible && (
-                <CountUp start={0} end={130000} suffix="+" duration={5} />
+                <CountUp start={0} end={130000} suffix="+" duration={3} />
               )}
             </h3>
             <p className="text-white 2xl:text-2xl text-left font-extralight">
@@ -100,27 +103,28 @@ const AboutUs = () => {
           <h2 className="text-5xl 2xl:text-6xl text-center  font-bold font-oxanium text-white mb-6">
             Our Clients
           </h2>
-          <div className="flex justify-center 2xl:w-[100%] lg:w-[100%] w-[70%] 2xl:space-x-8 lg:space-x-8 space-x-1 ">
+          <div className="flex justify-center items-center gap-10 2xl:w-[100%] lg:w-[100%] w-[70%] 2xl:space-x-8 lg:space-x-8 space-x-1 rounded-full p-2">
             {/* Client logos */}
             <img
-              src="https://logos-world.net/wp-content/uploads/2023/08/Bad-Bunny-Logo-500x281.png"
+              src={C1}
               alt="Client 1"
-              className="w-auto h-12 2xl:h-20 block"
+              className="w-auto h-10 2xl:h-16 block hover:scale-125"
             />
             <img
-              src="https://logos-world.net/wp-content/uploads/2023/08/Giorgio-Armani-Logo-500x281.png"
+              src={C2}
               alt="Client 2"
-              className="w-auto h-12 2xl:h-20 block"
+              className="w-auto h-24 2xl:h-40 block hover:scale-125"
             />
+            {/* Show these only on larger screens */}
             <img
-              src="https://logos-world.net/wp-content/uploads/2023/07/Adidas-Logo-500x281.png"
+              src={C3}
               alt="Client 3"
-              className="w-auto h-12 2xl:h-20 block"
+              className="hidden md:block w-auto h-12 2xl:h-20 hover:scale-125"
             />
             <img
-              src="https://logos-world.net/wp-content/uploads/2023/05/Chanel-Logo.png"
+              src={C4}
               alt="Client 4"
-              className="w-auto h-12 2xl:h-20 block"
+              className="hidden md:block w-auto h-12 2xl:h-20 hover:scale-125"
             />
           </div>
         </div>

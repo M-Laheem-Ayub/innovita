@@ -13,6 +13,7 @@ const ContactForm = () => {
     email: "",
     phone: "",
     message: "",
+    subject: "", // Added subject state
   });
 
   const handleInputChange = (e) => {
@@ -25,10 +26,10 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, location, email, phone, message } = formData;
+    const { name, location, email, phone, message, subject } = formData;
 
     // Create the mailto link with the form values
-    const mailtoLink = `mailto:info@innovita.ae?subject=Contact%20Form%20Submission&body=Hi,%20I'm%20${name}.%0A%0A${message}%0A%0AYou%20can%20reach%20out%20to%20me%20via%20email%20at%20${email}%20or%20contact%20me%20on%20my%20phone%20number:%20${phone}.%0A%0ARegards,%0A${name}`;
+    const mailtoLink = `mailto:info@innovita.ae?subject=${subject}&body=Hi,%20I'm%20${name}.%0A%0A${message}%0A%0AYou%20can%20reach%20out%20to%20me%20via%20email%20at%20${email}%20or%20contact%20me%20on%20my%20phone%20number:%20${phone}.%0A%0ARegards,%0A${name}`;
 
     // Open the default email client with pre-filled fields
     window.location.href = mailtoLink;
@@ -107,6 +108,7 @@ const ContactForm = () => {
           <div className="flex gap-4 mb-8">
             <div className="relative w-1/2">
               <input
+                required
                 type="text"
                 id="name"
                 name="name"
@@ -140,10 +142,67 @@ const ContactForm = () => {
               </label>
             </div>
           </div>
+          <div className="relative mb-8">
+            <select
+              required
+              id="subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleInputChange}
+              className="peer w-full border-b border-black bg-transparent text-gray-700 focus:outline-none focus:border-black font-oxanium text-sm"
+            >
+              <option className="text-sm font-oxanium" value="">
+                Select Subject
+              </option>
+              <option
+                className="text-sm font-oxanium"
+                value="Fixed Louver Pergolas"
+              >
+                Fixed Louver Pergolas
+              </option>
+              <option
+                className="text-sm font-oxanium"
+                value="Retractable Roof Systems"
+              >
+                Retractable Roof Systems
+              </option>
+              <option
+                className="text-sm font-oxanium"
+                value="Adjustable Louvered Pergolas "
+              >
+                Adjustable Louvered Pergolas
+              </option>
+              <option
+                className="text-sm font-oxanium"
+                value="Outdoor Shading Solutions"
+              >
+                Outdoor Shading Solutions
+              </option>
+              <option
+                className="text-sm font-oxanium"
+                value="Motorized Screens and Blinds"
+              >
+                Motorized Screens and Blinds
+              </option>
+              <option
+                className="text-sm font-oxanium"
+                value="Car Parking Sheds Protection"
+              >
+                Car Parking Sheds Protection
+              </option>
+              <option className="text-sm font-oxanium" value="Have a Question">
+                Have a Question
+              </option>
+              <option className="text-sm font-oxanium" value="Other">
+                Other
+              </option>
+            </select>
+          </div>
           {/* Email and Phone */}
           <div className="flex gap-4 mb-8">
             <div className="relative w-1/2">
               <input
+                required
                 type="email"
                 id="email"
                 name="email"
@@ -161,6 +220,7 @@ const ContactForm = () => {
             </div>
             <div className="relative w-1/2">
               <input
+                required
                 type="tel"
                 id="phone"
                 name="phone"
@@ -180,6 +240,7 @@ const ContactForm = () => {
           {/* Message */}
           <div className="relative mb-4">
             <input
+              required
               id="message"
               name="message"
               value={formData.message}

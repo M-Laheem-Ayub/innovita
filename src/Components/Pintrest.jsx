@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import H1 from "../assets/Hero/H1.jpg";
-import H2 from "../assets/Hero/H2.jpg";
-import H3 from "../assets/Hero/H3.jpg";
-import H4 from "../assets/Hero/H4.jpg";
-import H5 from "../assets/Hero/H5.jpg";
-import H6 from "../assets/Hero/H6.jpg";
+import H1 from "../assets/Hero/H1.webp";
+import H2 from "../assets/Hero/H2.webp";
+import H3 from "../assets/Hero/H3.webp";
+import H4 from "../assets/Hero/H4.webp";
+import H5 from "../assets/Hero/H5.webp";
+import H6 from "../assets/Hero/H6.webp";
 import S1 from "../assets/service/s1.png";
 import S2 from "../assets/service/s2.png";
 import S5 from "../assets/service/s5.png";
@@ -78,6 +78,7 @@ const Pintrest = () => {
           >
             <img
               src={image.src}
+              loading="lazy"
               alt="Interior Design Services in Dubai, Interior Design Services in UAE, Interior Design Services near me"
               className="w-full h-full object-cover"
             />

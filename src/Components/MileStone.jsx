@@ -101,22 +101,26 @@ const AboutUs = () => {
             {/* Client logos */}
             <img
               src={C1}
+              loading="lazy"
               alt="Client 1"
               className="w-auto h-10 2xl:h-16 block hover:scale-125"
             />
             <img
               src={C2}
+              loading="lazy"
               alt="Client 2"
               className="w-auto h-24 2xl:h-40 block hover:scale-125"
             />
             {/* Show these only on larger screens */}
             <img
               src={C3}
+              loading="lazy"
               alt="Client 3"
               className="hidden md:block w-auto h-12 2xl:h-20 hover:scale-125"
             />
             <img
               src={C4}
+              loading="lazy"
               alt="Client 4"
               className="hidden md:block w-auto h-12 2xl:h-20 hover:scale-125"
             />

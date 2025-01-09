@@ -8,34 +8,34 @@ const testimonials = [
   {
     id: 1,
     name: "John Doe",
-    timeAgo: "2 years ago",
+    timeAgo: "2 months ago",
     stars: 5,
     image: T1,
-    text: "This is an amazing service. I had a great experience and would highly recommend it to everyone!",
+    text: "Innovita provided exceptional interior design services. Highly recommend for anyone looking to transform their space!",
   },
   {
     id: 2,
     name: "Jane Smith",
-    timeAgo: "1 year ago",
+    timeAgo: "1 month ago",
     stars: 4,
     image: T2,
-    text: "Wonderful experience! The service exceeded my expectations.",
+    text: "Fantastic service! Innovita exceeded my expectations with their creative interior designs.",
   },
   {
     id: 3,
     name: "Alice Johnson",
-    timeAgo: "6 months ago",
+    timeAgo: "2 days ago",
     stars: 5,
     image: T3,
-    text: "I couldn’t be happier with the results. Highly professional and reliable!",
+    text: "Very pleased with Innovita’s work on my office interior. Professional and reliable service!",
   },
   {
     id: 4,
     name: "Bob Brown",
-    timeAgo: "3 months ago",
+    timeAgo: "3 weeks ago",
     stars: 4,
     image: T4,
-    text: "Great service and very friendly staff. Will use again!",
+    text: "Great experience with Innovita. Friendly staff and great interior design results. Will use again!",
   },
 ];
 
@@ -55,7 +55,7 @@ const Testimonial = () => {
             <div className="flex font-oxanium items-center gap-3">
               <img
                 src={testimonial.image}
-                alt={`${testimonial.name}'s Testimonial`}
+                alt="affordable and cheap interior designer in dubai, affordable and cheap interior designer in uae, interior designers, interior design, interior, near me "
                 className="w-12 h-12 rounded-full object-cover"
               />
               <div>
@@ -80,7 +80,7 @@ const Testimonial = () => {
             </div>
             {/* Rating */}
             {/* Paragraph */}
-            <p className="mt-4 text-gray-700 font-inter text-sm text-justify lg:text-left">
+            <p className="mt-4 text-gray-700 font-oxanium text-sm text-justify lg:text-left">
               {testimonial.text}
             </p>
           </div>

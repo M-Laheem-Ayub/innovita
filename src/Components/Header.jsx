@@ -27,8 +27,9 @@ const Header = () => {
           <Link to="/" className="flex items-center">
             <img
               src={Innovita}
+              loading="lazy"
               className="mr-3 h-10 sm:h-12"
-              alt="Innovita Logo"
+              alt="Innovita best interior design Service in Dubai and UAE"
             />
           </Link>
           <div className="flex items-center lg:order-2">

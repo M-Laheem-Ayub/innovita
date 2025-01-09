@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
-import H1 from "../assets/Hero/H1.jpg";
-import H2 from "../assets/Hero/H2.jpg";
-import H3 from "../assets/Hero/H3.jpg";
-import H4 from "../assets/Hero/H4.jpg";
-import H5 from "../assets/Hero/H5.jpg";
-import H6 from "../assets/Hero/H6.jpg";
+import H1 from "../assets/Hero/H1.webp";
+import H2 from "../assets/Hero/H2.webp";
+import H3 from "../assets/Hero/H3.webp";
+import H4 from "../assets/Hero/H4.webp";
+import H5 from "../assets/Hero/H5.webp";
+import H6 from "../assets/Hero/H6.webp";
 
 const HeroSection = () => {
   const images = [H1, H2, H3, H4, H5, H6];
@@ -80,7 +80,7 @@ const HeroSection = () => {
           <h1 className="text-5xl 2xl:text-6xl font-bold font-oxanium mb-4 mt-5">
             {texts[textIndex].title}
           </h1>
-          <p className="text-[0.8rem] 2xl:text-[1.3rem] font-inter mb-6">
+          <p className="text-[0.8rem] 2xl:text-[1.3rem] font-oxanium mb-6">
             {texts[textIndex].description}
           </p>
           <button

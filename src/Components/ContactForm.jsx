@@ -54,6 +54,7 @@ const ContactForm = () => {
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJdQj2kLqUnNwKT0Ayr7rqqP_0YPq8QxFqqw&s"
             alt="Contact Us"
+            loading="lazy"
             className="w-4 h-4 mt-1 mr-5"
           />
           <div className="text-start">
@@ -62,7 +63,7 @@ const ContactForm = () => {
             </h1>
             <button
               type="submit"
-              className="bg-black font-oxanium text-white font-bold text-[0.6rem] py-1 px-6 rounded-lg hover:bg-gray-600 focus:ring-2 focus:ring-blue-500"
+              className="bg-black font-oxanium text-white font-bold text-[0.6rem] py-1 px-6 rounded-lg hover:bg-gray-600 border border-white"
             >
               View in Map*
             </button>
@@ -84,13 +85,23 @@ const ContactForm = () => {
         {/* Add Images Section */}
         <div className="flex justify-start items-end gap-4 mt-5  w-full ml-8">
           <a href="https://www.instagram.com/" target="_blank">
-            <img src={Insta} alt="Image 1" className="w-8 h-8 mb-1" />
+            <img
+              src={Insta}
+              alt="Image 1"
+              loading="lazy"
+              className="w-8 h-8 mb-1"
+            />
           </a>
           <a href="https://www.facebook.com/" target="_blank">
-            <img src={Facw} alt="Image 1" className="w-8 h-8 mb-1" />
+            <img
+              src={Facw}
+              alt="Image 1"
+              loading="lazy"
+              className="w-8 h-8 mb-1"
+            />
           </a>
           <a href="https://www.x.com/" target="_blank">
-            <img src={X} alt="Image 1" className="w-10  h-10 " />
+            <img src={X} alt="Image 1" loading="lazy" className="w-10  h-10 " />
           </a>
         </div>
         <h1 className="text-white mt-10 font-oxanium text-sm ml-7">
@@ -142,7 +153,13 @@ const ContactForm = () => {
               </label>
             </div>
           </div>
-          <div className="relative mb-8">
+          <div className="relative mb-8 mt-10">
+            <label
+              htmlFor="location"
+              className="absolute -left-1 text-lg text-black font-oxanium transform -translate-y-6 scale-75 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 transition-all duration-200"
+            >
+              Subject
+            </label>
             <select
               required
               id="subject"
@@ -151,47 +168,47 @@ const ContactForm = () => {
               onChange={handleInputChange}
               className="peer w-full border-b border-black bg-transparent text-gray-700 focus:outline-none focus:border-black font-oxanium text-sm"
             >
-              <option className="text-sm font-oxanium" value="">
-                Select Subject
+              <option
+                className="text-sm font-oxanium"
+                value="I want to ask a Question"
+              >
+                I want to ask a Question
               </option>
               <option
                 className="text-sm font-oxanium"
-                value="Fixed Louver Pergolas"
+                value="Service: Fixed Louver Pergolas"
               >
-                Fixed Louver Pergolas
+                Service: Fixed Louver Pergolas
               </option>
               <option
                 className="text-sm font-oxanium"
-                value="Retractable Roof Systems"
+                value="Service: Retractable Roof Systems"
               >
-                Retractable Roof Systems
+                Service: Retractable Roof Systems
               </option>
               <option
                 className="text-sm font-oxanium"
-                value="Adjustable Louvered Pergolas "
+                value="Service: Adjustable Louvered Pergolas "
               >
-                Adjustable Louvered Pergolas
+                Service: Adjustable Louvered Pergolas
               </option>
               <option
                 className="text-sm font-oxanium"
-                value="Outdoor Shading Solutions"
+                value="Service: Outdoor Shading Solutions"
               >
-                Outdoor Shading Solutions
+                Service: Outdoor Shading Solutions
               </option>
               <option
                 className="text-sm font-oxanium"
-                value="Motorized Screens and Blinds"
+                value="Service: Motorized Screens and Blinds"
               >
-                Motorized Screens and Blinds
+                Service: Motorized Screens and Blinds
               </option>
               <option
                 className="text-sm font-oxanium"
-                value="Car Parking Sheds Protection"
+                value="Service: Car Parking Sheds Protection"
               >
-                Car Parking Sheds Protection
-              </option>
-              <option className="text-sm font-oxanium" value="Have a Question">
-                Have a Question
+                Service: Car Parking Sheds Protection
               </option>
               <option className="text-sm font-oxanium" value="Other">
                 Other

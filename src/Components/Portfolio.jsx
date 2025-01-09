@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import P1 from "../assets/portfolio/P1.jpg";
-import P2 from "../assets/portfolio/P2.jpg";
-import P3 from "../assets/portfolio/P3.jpg";
+import P1 from "../assets/portfolio/P1.webp";
+import P2 from "../assets/portfolio/P3.webp";
+import P3 from "../assets/portfolio/P2.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,16 +14,13 @@ const PortfolioSlider = () => {
   // Array of images for left and right cards
   const images = [
     {
-      right: P1,
-      left: P1,
+      img: P1,
     },
     {
-      right: P2,
-      left: P2,
+      img: P2,
     },
     {
-      left: P3,
-      right: P3,
+      img: P3,
     },
   ];
 
@@ -84,7 +81,7 @@ const PortfolioSlider = () => {
   }, []);
 
   return (
-    <div className="w-screen lg:h-[200vh] h-[100vh] flex flex-col justify-center items-center overflow-hidden">
+    <div className="w-screen h-fit  flex flex-col justify-center items-center overflow-hidden">
       <h2 className="text-5xl 2xl:text-6xl font-bold font-oxanium text-gray-800 mb-5 text-center">
         <span className="font-bir text-[10vh] font-[400]">-</span> Portfolio
         Gallery
@@ -99,35 +96,37 @@ const PortfolioSlider = () => {
       {images.map((image, index) => (
         <div
           key={index}
-          className="flex w-full h-[100vh] justify-center items-center mb-[-10vh] relative gap-10"
+          className="flex w-full h-[100vh] justify-center items-start lg:mb-[-30vh] mb-[-50vh]  relative"
         >
           {/* Left Card */}
           <div
             ref={(el) => (leftCards.current[index] = el)}
-            className="w-[80%]  h-[100%]  shadow-lg overflow-hidden absolute"
+            className="w-[80%]  lg:h-[70%] h-[50%]  shadow-lg overflow-hidden absolute"
             style={{
               clipPath: "polygon(0 0, 0% 100%, 100% 100%)", // Bottom triangular cut
             }}
           >
             <img
-              src={image.left}
-              alt={`Left Card ${index + 1}`}
-              className="w-full h-full object-cover"
+              src={image.img}
+              loading="lazy"
+              alt="best Interior Design services in Dubai and afforable"
+              className="w-full  h-[100%]  object-cover"
             />
           </div>
 
           {/* Right Card */}
           <div
             ref={(el) => (rightCards.current[index] = el)}
-            className="w-[80%]  h-full  shadow-lg overflow-hidden absolute"
+            className="w-[80%]  lg:h-[70%] h-[50%]  shadow-lg overflow-hidden absolute bg-yellow-50"
             style={{
               clipPath: "polygon(100% 100%, 100% 0, 0 0)", // Top triangular cut
             }}
           >
             <img
-              src={image.right}
-              alt={`Right Card ${index + 1}`}
-              className="w-full h-full object-cover"
+              src={image.img}
+              loading="lazy"
+              alt="best Interior Design services in UAE and cheap"
+              className="w-full  h-[100%]  object-cover"
             />
           </div>
         </div>

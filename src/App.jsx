@@ -95,6 +95,7 @@ function App() {
           <img
             src={Whatsapp}
             alt="WhatsApp Icon"
+            loading="lazy"
             className="w-10 h-10 2xl:w-14 2xl:h-14 hover:scale-125"
           />
         </button>

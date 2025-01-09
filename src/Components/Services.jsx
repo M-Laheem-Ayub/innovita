@@ -143,11 +143,12 @@ const ServiceSection = () => {
                   backgroundPosition: "center",
                 }}
               >
-                <button className="bg-white mr-5 mb-5 rounded-full h-10 w-10 2xl:h-16 2xl:w-16 rotate-[-35deg] hover:scale-125 hover:rotate-[0deg]">
+                <button className="bg-white mr-5 mb-5 rounded-full h-10 w-10 2xl:h-16 2xl:w-16 rotate-[-35deg] hover:scale-125 hover:rotate-[0deg] hidden md:flex">
                   <img
                     className="rounded-full"
+                    loading="lazy"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWf-xLr5NYjR9T9IBI_CJfgaAbD_p40jcGCA&s"
-                    alt=""
+                    alt="best and Affordable Interior Design service in Dubai, best and Affordable Interior Design service in UAE, best and Affordable Interior Design service in uae, best and Affordable Interior Design service in dubai"
                   />
                 </button>
               </div>

@@ -46,12 +46,12 @@ const AboutUs = () => {
         </h2>
 
         {/* About Description */}
-        <p className="text-sm  2xl:text-2xl text-justify font-inter font-[300] text-white mb-5">
-          At Innovita Technical Services, we specialize in providing high-end
-          outdoor living solutions that blend design, innovation, and
-          practicality. Whether you're enhancing your home or commercial space,
-          our bespoke outdoor systems are tailored to meet your needs,
-          delivering style, comfort, and durability in every project.
+        <p className="text-sm  2xl:text-2xl text-justify font-oxanium font-[300] text-white mb-5">
+          At Innovita, we specialize in creating stunning, functional interiors
+          that reflect your unique style. With a focus on elegance and
+          innovation, our expert team transforms spaces into inspiring
+          environments. Let us bring your vision to life with tailored designs
+          that elevate every detail.
         </p>
 
         {/* Statistics */}
@@ -107,22 +107,26 @@ const AboutUs = () => {
             {/* Client logos */}
             <img
               src={C1}
+              loading="lazy"
               alt="Client 1"
               className="w-auto h-10 2xl:h-16 block hover:scale-125"
             />
             <img
               src={C2}
+              loading="lazy"
               alt="Client 2"
               className="w-auto h-24 2xl:h-40 block hover:scale-125"
             />
             {/* Show these only on larger screens */}
             <img
               src={C3}
+              loading="lazy"
               alt="Client 3"
               className="hidden md:block w-auto h-12 2xl:h-20 hover:scale-125"
             />
             <img
               src={C4}
+              loading="lazy"
               alt="Client 4"
               className="hidden md:block w-auto h-12 2xl:h-20 hover:scale-125"
             />

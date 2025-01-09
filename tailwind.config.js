@@ -5,7 +5,6 @@ export default {
     extend: {
       fontFamily: {
         oxanium: ["'Poppins'", "serif"],
-        inter: ["'Inter'", "serif"],
         zen: ["'Zen Dots'", "serif"],
         bir: ["'Birthstone'", "serif"],
       },

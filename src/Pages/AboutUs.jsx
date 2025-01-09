@@ -24,15 +24,17 @@ const MeetOurTeam = () => {
   return (
     <div className="lg:h-[80vh] w-[100vw]  relative flex justify-center h-[80vh] mb-16 mt-16">
       <div className="h-[100%] w-[90%] bg-white  -top-20 2xl:-top-36 z-20 rounded-xl flex lg:flex-row flex-col">
-        <div className="h-[100%] lg:w-[30%]  rounded-xl flex justify-start items-center flex-col p-8  gap-10">
+        <div className="h-[100%] lg:w-[30%]  rounded-xl flex justify-start items-center flex-col p-8  gap-7">
           <h2 className="text-5xl 2xl:text-6xl font-bold  text-center font-oxanium text-gray-800">
             Meet Our Team
           </h2>
           <p className="text-2xl 2xl:text-4xl  text-justify font-bir">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat
-            voluptate at voluptatibus fugiat officia quibusdam neque aspernatur
-            eaque quod dolorem, voluptatem nostrum, earum expedita voluptates
-            perspiciatis ut officiis. Debitis, vero?
+            At Innovita, our talented team of interior designers and design
+            professionals specializes in creating stylish, functional spaces.
+            With expertise in home interiors, office designs, and modern decor,
+            we work closely with you to bring your vision to life. Trust our
+            team to transform your space with innovative, personalized design
+            solutions.
           </p>
         </div>
         <div className="h-[100%] lg:w-[70%]  rounded-xl  flex-col  hidden md:flex">
@@ -110,12 +112,7 @@ const MeetOurTeam = () => {
 
 const PortfolioSlider = () => {
   // Sample image URLs for the slider
-  const images = [
-    "https://images2.alphacoders.com/134/1347182.png", // Image 2
-    "https://images5.alphacoders.com/134/1347174.png", // Image 3
-    "https://media.licdn.com/dms/image/v2/D5612AQH9nBuZE1m2Cw/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1677167203600?e=1738800000&v=beta&t=6lL1xp8uk2NtmzSxfyKS8b7oIiZDyXtGENt9epFllkg", // Image 4
-    "https://images4.alphacoders.com/133/thumb-1920-1338578.png",
-  ];
+  const images = [Person1, Person2, Person3, Person4];
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -150,7 +147,7 @@ const PortfolioSlider = () => {
             <div key={index} className="flex-shrink-0 w-full h-full">
               <img
                 src={image}
-                alt={`slider-img-${index}`}
+                alt="affordable and cheap interior designer in dubai best and Affordable Interior Design service in Dubai innovita best interior design in UAE and Dubai"
                 className="w-full h-full object-cover"
               />
             </div>

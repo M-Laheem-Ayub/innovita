@@ -68,18 +68,18 @@ const ServiceDetail = () => {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto my-20">
-        <div className="flex flex-wrap md:flex-row flex-col-reverse justify-center items-center">
-          <div className="md:w-1/2 w-full  justify-center items-center ">
-            <h1 className="text-3xl w-[90%] mt-5 flex-col  mx-auto mt-5 text-start font-bold mb-5">
+      <div className="max-w-6xl mx-auto my-20">
+        <div className="flex flex-wrap md:flex-row flex-col-reverse   justify-center items-center">
+          <div className="md:w-1/2 w-full md:px-5  ">
+            <h1 className="text-3xl w-[90%] mt-5 flex-col  m-auto text-start font-bold mb-5">
               {title}
             </h1>
-            <p className="text-lg w-[90%] text-start  mx-auto text-gray-700">
+            <p className="text-lg w-[90%] text-start  m-auto text-gray-700">
               {description}
             </p>
           </div>
 
-          <div className="md:w-1/2 w-full text-center">
+          <div className="md:w-1/2 w-full ">
             <img
               src={image}
               alt={title}
@@ -88,9 +88,10 @@ const ServiceDetail = () => {
           </div>
         </div>
       </div>
-      <div className="flex pt-20 bg-gray-100 flex-wrap mb-40  justify-center">
-        {whyChooseInnovita.map((item, index) => (
-          <div key={index} className="md:w-1/4 w-1/2 mb-11 aspect-square p-1">
+      <div className="flex pt-20 w-[100%] bg-gray-100 flex-wrap mb-40  justify-center">
+      <div className="flex  md:w-[90%] w-[100%]  flex-wrap   justify-cente">
+      {whyChooseInnovita.map((item, index) => (
+          <div key={index} className="md:w-1/4 w-full mb-12 p-1">
             <div
               className="justify-center flex flex-col items-center"
               style={{
@@ -103,15 +104,17 @@ const ServiceDetail = () => {
               <div className="justify-center flex flex-col items-center text-2xl -translate-y-1/2 text-black w-20 bg-white rounded-full h-20">
                 <FontAwesomeIcon icon={faShapes} />
               </div>
-              <h3 className="text-2xl text-white text-center md:-translate-y-full -translate-y-1/2 md:w-[100%] w-[60%] font-semibold text-gray-800">
+              <h3 className="text-2xl text-white text-center -translate-y-1/2 md:w-[100%] w-[60%] font-semibold text-gray-800">
                 {item.title}
               </h3>
-              <p className="text-sm md:-translate-y-1/3 -translate-y-1/4 p-3   text-center text-gray-400 mt-2">
+              <p className="text-sm  -translate-y-1/4 p-3 pb-10   text-center text-gray-400 mt-2">
                 {item.description}
               </p>
             </div>
           </div>
         ))}
+      </div>
+        
       </div>
 
       <ContactForm />

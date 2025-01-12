@@ -130,9 +130,16 @@ const ServiceSection = () => {
               className="relative w-[250px] md:w-80 h-[350px] md:h-96 2xl:h-[40rem] 2xl:w-[30rem] font-oxanium rounded-lg overflow-hidden flex-shrink-0 flex justify-center items-center flex-col shadow-2xl transition-all duration-300 hover:bg-black hover:scale-110"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              onClick={() => {
-                navigate("/Services");
-              }}
+              onClick={() =>
+                navigate("/service-detail", {
+                  state: {
+                    id: service.id,
+                    title: service.title,
+                    image: service.image,
+                    description: service.description,
+                  },
+                })
+              }
             >
               {/* Service Image */}
               <div

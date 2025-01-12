@@ -8,6 +8,7 @@ import HomePage from "./Pages/HomePage";
 import AboutPage from "./Pages/AboutUs"; // Example route
 import ServicePage from "./Pages/ServicePage";
 import Projects from "./Pages/Projects";
+import ServiceDetail from "./Pages/ServiceDetai";
 
 function App() {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -79,6 +80,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/About" element={<AboutPage />} />
               <Route path="/Services" element={<ServicePage />} />
+              <Route path="/service-detail" element={<ServiceDetail />} />
               <Route path="/Projects" element={<Projects />} />
             </Routes>
           </>

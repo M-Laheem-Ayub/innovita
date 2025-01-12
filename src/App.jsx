@@ -2,7 +2,7 @@ import Lenis from "lenis";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import React Router components
 import "./App.css";
-import Whatsapp from "./assets/Whatsapp.png";
+import Whatsapp from "./assets/whatsapp.png";
 import Preloader from "./Components/preloader";
 import HomePage from "./Pages/HomePage";
 import AboutPage from "./Pages/AboutUs"; // Example route

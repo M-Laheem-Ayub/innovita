@@ -1,10 +1,63 @@
 import React, { useState } from "react";
 import Innovita from "../assets/Innovita.png";
 import { Link, useLocation } from "react-router-dom";
+import S1 from "../assets/service/s1.png";
+import S2 from "../assets/service/s2.png";
+import S3 from "../assets/service/s3.png";
+import S4 from "../assets/service/s4.png";
+import S5 from "../assets/service/s5.png";
+import S6 from "../assets/service/s6.png";
 
+import { useNavigate } from "react-router-dom";
 const Header = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation(); // Hook to get the current route
+
+  const allServices = [
+    {
+      id: 1,
+      image: S1,
+      title: "Adjustable Louvered Pergolas",
+      description:
+        "Flexible shading with adjustable, rust-resistant louvers. Includes motorized options and reduces heat by up to 40%.",
+    },
+    {
+      id: 2,
+      image: S2,
+      title: "Fixed Louver Pergolas",
+      description:
+        "Stylish, permanent shading solution with durable aluminum louvers. Offers 40% heat reduction and requires minimal maintenance.",
+    },
+    {
+      id: 3,
+      image: S3,
+      title: "Motorized Screens and Blinds",
+      description:
+        "Remote-controlled screens for privacy and weather protection. Customizable, durable design reduces heat by 35%.",
+    },
+    {
+      id: 4,
+      image: S4,
+      title: "Retractable Roof Systems",
+      description:
+        "Motorized roofs providing instant shade or open sky. Durable design reduces heat by 40%.",
+    },
+    {
+      id: 5,
+      image: S5,
+      title: "Car Parking Sheds Protection",
+      description:
+        "Weather-resistant sheds offering vehicle protection and up to 30% heat reduction.",
+    },
+    {
+      id: 6,
+      image: S6,
+      title: "Outdoor Shading Solutions",
+      description:
+        "Versatile shading systems with premium materials for long-lasting comfort and style.",
+    },
+  ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -53,11 +106,10 @@ const Header = () => {
                   className="w-6 h-6"
                   fill="currentColor"
                   viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
                     fillRule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 011.414 1.414L11.414 10l4.293 4.293a1 1 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                     clipRule="evenodd"
                   ></path>
                 </svg>
@@ -66,11 +118,10 @@ const Header = () => {
                   className="w-6 h-6"
                   fill="currentColor"
                   viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
                     fillRule="evenodd"
-                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                     clipRule="evenodd"
                   ></path>
                 </svg>
@@ -87,23 +138,44 @@ const Header = () => {
               <li>
                 <Link
                   to="/"
-                  className={`block py-2 pr-3  pl-3   font-oxanium rounded ${
+                  className={`block py-2 pr-3 pl-3 font-oxanium rounded ${
                     location.pathname === "/" ? "underline" : ""
                   } transition duration-300 transform ease-in-out hover:scale-105`}
-                  aria-current="page"
                 >
                   Home
                 </Link>
               </li>
-              <li>
+              <li className="group relative">
                 <Link
                   to="/Services"
                   className={`block py-2 pr-3 pl-3 font-oxanium rounded ${
                     location.pathname === "/Services" ? "underline" : ""
                   } transition duration-300 transform ease-in-out hover:scale-105`}
                 >
-                  Service
+                  Services
                 </Link>
+                <ul className="absolute hidden group-hover:flex flex-col bg-white border border-gray-300 shadow-lg mt-0 rounded-md z-50 w-[300px]"
+                style={{ zIndex: 9999 }}
+                >
+                  {allServices.map((service) => (
+                    <li
+                      key={service.id}
+                      onClick={() =>
+                        navigate("/service-detail", {
+                          state: {
+                            id: service.id,
+                            title: service.title,
+                            image: service.image,
+                            description: service.description,
+                          },
+                        })
+                      }
+                      className="block py-2 px-4 hover:bg-gray-200 cursor-pointer"
+                    >
+                      {service.title}
+                    </li>
+                  ))}
+                </ul>
               </li>
               <li>
                 <Link

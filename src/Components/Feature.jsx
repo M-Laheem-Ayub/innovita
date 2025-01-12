@@ -3,6 +3,29 @@ import G1 from "../assets/servicePage/G1.jpg";
 import G2 from "../assets/servicePage/G2.jpg";
 import G3 from "../assets/servicePage/G3.png";
 import G4 from "../assets/servicePage/G4.png";
+
+const projects = [
+  {
+    id: 1,
+    image: G1,
+    title: "Luxury Fixed Louver Pergolas ...",
+  },
+  {
+    id: 2,
+    image: G2,
+    title: "Retractable Roof Systems ...",
+  },
+  {
+    id: 3,
+    image: G3,
+    title: "Adjustable Louvered Pergolas ...",
+  },
+  {
+    id: 4,
+    image: G4,
+    title: "Outdoor Shading Solutions ...",
+  },
+];
 const Feature = () => {
   return (
     <div>

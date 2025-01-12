@@ -10,7 +10,7 @@ import Person3 from "../assets/t3.jpg";
 import Person4 from "../assets/t4.jpg";
 const AboutPage = () => (
   <div>
-    <Header />
+    <Header style={{ zIndex: 9999 }} />
     <MeetOurTeam />
     <AboutUs />
     <HowWeDeliverSection />
@@ -22,9 +22,9 @@ export default AboutPage;
 
 const MeetOurTeam = () => {
   return (
-    <div className="lg:h-[80vh] w-[100vw]  relative flex justify-center h-[80vh] mb-16 mt-16">
-      <div className="h-[100%] w-[90%] bg-white  -top-20 2xl:-top-36 z-20 rounded-xl flex lg:flex-row flex-col">
-        <div className="h-[100%] lg:w-[30%]  rounded-xl flex justify-start items-center flex-col p-8  gap-7">
+    <div className="lg:h-[80vh] w-[100vw]  relative flex z-0 justify-center h-[80vh] mb-16 mt-16">
+      <div className="h-[100%] w-[90%] bg-white  -top-20 2xl:-top-36 z-0 rounded-xl flex lg:flex-row flex-col">
+        <div className="h-[100%] lg:w-[30%]  rounded-xl flex justify-start items-center flex-col p-8 gap-7">
           <h2 className="text-5xl 2xl:text-6xl font-bold  text-center font-oxanium text-gray-800">
             Meet Our Team
           </h2>

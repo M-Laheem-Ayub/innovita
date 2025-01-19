@@ -11,7 +11,11 @@ import Person4 from "../assets/t4.jpg";
 const AboutPage = () => (
   <div>
     <Header style={{ zIndex: 9999 }} />
-    <MeetOurTeam />
+
+    <div className="z-0">
+    <MeetOurTeam style={{ zIndex: 0}} />
+      </div>
+    
     <AboutUs />
     <HowWeDeliverSection />
     <ContactForm />
@@ -23,7 +27,7 @@ export default AboutPage;
 const MeetOurTeam = () => {
   return (
     <div className="lg:h-[80vh] w-[100vw]  relative flex z-0 justify-center h-[80vh] mb-16 mt-16">
-      <div className="h-[100%] w-[90%] bg-white  -top-20 2xl:-top-36 z-0 rounded-xl flex lg:flex-row flex-col">
+      <div className="h-[100%] w-[90%] bg-transparent  -top-20 2xl:-top-36 z-0 rounded-xl flex lg:flex-row flex-col">
         <div className="h-[100%] lg:w-[30%]  rounded-xl flex justify-start items-center flex-col p-8 gap-7">
           <h2 className="text-5xl 2xl:text-6xl font-bold  text-center font-oxanium text-gray-800">
             Meet Our Team
@@ -37,7 +41,7 @@ const MeetOurTeam = () => {
             solutions.
           </p>
         </div>
-        <div className="h-[100%] lg:w-[70%]  rounded-xl  flex-col  hidden md:flex">
+        <div className="h-[100%] lg:w-[70%] -z-40 rounded-xl  flex-col  hidden md:flex">
           <div className="flex h-[100%] w-[100%] gap-10  justify-center items-center lg:flex-row flex-col">
             <div
               style={{

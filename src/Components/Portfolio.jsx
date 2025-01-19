@@ -92,45 +92,6 @@ const PortfolioSlider = () => {
           speaks
         </span>
       </h2>
-
-      {images.map((image, index) => (
-        <div
-          key={index}
-          className="flex w-full h-[100vh] justify-center items-start lg:mb-[-30vh] mb-[-50vh]  relative"
-        >
-          {/* Left Card */}
-          <div
-            ref={(el) => (leftCards.current[index] = el)}
-            className="w-[80%]  lg:h-[70%] h-[50%]  shadow-lg overflow-hidden absolute"
-            style={{
-              clipPath: "polygon(0 0, 0% 100%, 100% 100%)", // Bottom triangular cut
-            }}
-          >
-            <img
-              src={image.img}
-              loading="lazy"
-              alt="best Interior Design services in Dubai and afforable"
-              className="w-full  h-[100%]  object-cover"
-            />
-          </div>
-
-          {/* Right Card */}
-          <div
-            ref={(el) => (rightCards.current[index] = el)}
-            className="w-[80%]  lg:h-[70%] h-[50%]  shadow-lg overflow-hidden absolute bg-yellow-50"
-            style={{
-              clipPath: "polygon(100% 100%, 100% 0, 0 0)", // Top triangular cut
-            }}
-          >
-            <img
-              src={image.img}
-              loading="lazy"
-              alt="best Interior Design services in UAE and cheap"
-              className="w-full  h-[100%]  object-cover"
-            />
-          </div>
-        </div>
-      ))}
     </div>
   );
 };

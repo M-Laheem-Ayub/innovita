@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+// import Ripple from "@/components/magicui/ripple";
 import CountUp from "react-countup";
 import About from "../assets/Contact.jpg";
 import C1 from "../assets/Clients/C1.png";
@@ -132,6 +133,7 @@ const AboutUs = () => {
             />
           </div>
         </div>
+        {/* <Ripple /> */}
       </div>
     </section>
   );

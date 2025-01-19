@@ -19,46 +19,129 @@ const ServiceSection = () => {
   const allServices = [
     {
       id: 1,
+      width:"pe-10",
       image: S1,
-      title: "Adjustable Louvered Pergolas",
+      title: "Luxury Interior Design Services",
       description:
-        "Flexible shading with adjustable, rust-resistant louvers. Includes motorized options and reduces heat by up to 40%.",
+        "Luxury Interior Design Solutions in Dubai Transform your living spaces with Dubai's most luxurious interior design experts.",
+      subTitle:"Our Most Luxurious Interior Design Service In Dubai",
+      subDescription:"At Innovita Technical Service LLC, we understand that your interior space is a reflection of your personality and aspirations. Our Best luxurious interior design services blend functionality with aesthetics to create inspiring spaces that enhance your lifestyle. ",
     },
     {
       id: 2,
+      width:"pe-10",
       image: S2,
-      title: "Fixed Louver Pergolas",
+      title: "Custom Furniture Solutions",
       description:
-        "Stylish, permanent shading solution with durable aluminum louvers. Offers 40% heat reduction and requires minimal maintenance.",
-    },
+        "Bespoke Furniture Crafted for Dubai's Elite Experience the perfect blend of form and function with our custom furniture solutions.",
+      subTitle:"Our Most Custom Furniture Service In Dubai",
+      subDescription:"Our custom furniture division specializes in creating unique pieces that perfectly match your space and style preferences. Each piece is meticulously crafted using premium materials and innovative designs. ",
+      },
     {
       id: 3,
+      width:"pe-10",
       image: S3,
-      title: "Motorized Screens and Blinds",
+      title: "Architectural Design Services",
       description:
-        "Remote-controlled screens for privacy and weather protection. Customizable, durable design reduces heat by 35%.",
-    },
+        "Innovative Architectural Solutions in Dubai Creating iconic spaces that merge aesthetics with functionality through expert architectural design.",
+      subTitle:"Our best Luxurious Architectural Service In Dubai ",
+      subDescription:"Our architectural design team specializes in creating stunning, functional spaces that reflect modern Dubai's dynamic spirit. We combine innovative design principles with practical solutions to deliver exceptional results. ",
+      },
     {
       id: 4,
       image: S4,
-      title: "Retractable Roof Systems",
+      width:"pe-10",
+      title: "Beach Pool Construction",
       description:
-        "Motorized roofs providing instant shade or open sky. Durable design reduces heat by 40%.",
-    },
+        "Luxury Pool Construction in Dubai Creating stunning aquatic retreats with premium design and engineering excellence.",
+      subTitle:"Our Luxury Pool Construction Service In Dubai",
+      subDescription:"Our pool construction division specializes in creating luxurious swimming pools that complement Dubai's premier properties. We combine innovative technology with expert craftsmanship. ",
+      },
     {
       id: 5,
       image: S5,
-      title: "Car Parking Sheds Protection",
+      width:"pe-10",
+      title: "Metal Structural Work ",
       description:
-        "Weather-resistant sheds offering vehicle protection and up to 30% heat reduction.",
-    },
+        "Our Premium Metal Engineering Solutions Provide Innovative and Reliable Structural Metal work, exceeding client expectations across Dubai.",
+      subTitle:"Our Best Metal Structural Work Service In Dubai",
+      subDescription:"Our metal structural division provides comprehensive solutions for both residential and commercial projects, ensuring durability and aesthetic excellence.",
+      },
     {
       id: 6,
       image: S6,
-      title: "Outdoor Shading Solutions",
+      width:"pe-10",
+      title: "Metal Fencing Design",
       description:
-        "Versatile shading systems with premium materials for long-lasting comfort and style.",
+        "Elevate Your Property's Security and Aesthetic appeal with our bespoke Metal Fencing Solutions in Dubai, meticulously designed for premium residences.",
+      subTitle:"Dubai Most Luxury Metal Fencing Design Service",
+      subDescription:"Our metal fencing solutions offer the perfect blend of security, durability, and aesthetic appeal, customized for Dubai's luxury properties. ",
+      },
+    {
+      id: 7,
+      image: S6,
+      width:"pe-20",
+      title: "Metal Floor Grating",
+      description:
+      "Our Professional Metal Grating Solutions are Engineered for exceptional durability and designed to withstand the harshest environments.",
+      subTitle:"Dubai Most Luxury Metal Fencing Design Service",
+      subDescription:"Our metal fencing solutions offer the perfect blend of security, durability, and aesthetic appeal, customized for Dubai's luxury properties. ",
+      
     },
+    {
+      id: 8,
+      width:"pe-20 me-10",
+      image: S6,
+      title: "Metal Bollards",
+      description:
+        "Uncompromising Strength Meets Sophisticated Design in Advanced Security Bollard Systems, protecting properties with unwavering resilience.",
+      subTitle:"Dubai Most Luxury Metal Fencing Design Service",
+      subDescription:"Our metal fencing solutions offer the perfect blend of security, durability, and aesthetic appeal, customized for Dubai's luxury properties. ",
+      
+      },
+    {
+      id: 9,
+      image: S6,
+      width:"pe-20",
+      title: "Outdoor Exterior Work",
+      description:
+        "Dubai Most Luxury Stainless Steel Solutions Engineering excellence in commercial and residential steel applications.",
+      subTitle:"Dubai Most Luxury Outdoor living Service ",
+      subDescription:"Transform your outdoor areas into sophisticated living spaces with our comprehensive exterior solutions. We specialize in creating comfortable, stylish, and durable outdoor environments. ",
+      },
+    {
+      id: 10,
+      width:"pe-10",
+      image: S6,
+      title: "Stainless Steel Equipment",
+      description:
+        "Dubai Most Luxury Stainless Steel Solutions Engineering excellence in commercial and residential steel applications.",
+      subTitle:"",
+      subDescription:"",
+      },
+    {
+      id: 11,
+      width:"pe-10",
+      image: S6,
+      title: "Modern  Aluminum Windows & Doors",
+      description:
+        "Transform Your Living Spaces With Our Premium Aluminum Solutions, Featuring Innovative Window and Door Systems that elevate modern living.",
+      subTitle:"Dubai Most Luxury Metal Fencing Design Service",
+      subDescription:"Our metal fencing solutions offer the perfect blend of security, durability, and aesthetic appeal, customized for Dubai's luxury properties. ",
+      
+      },
+    {
+      id: 12,
+      width:"pe-20 me-20",
+      image: S6,
+      title: "MEP Services",
+      description:
+        "Dubai Best MEP Solutions: A leading provider of comprehensive mechanical, electrical, and plumbing services, ensuring project success across Dubai.",
+      subTitle:"Dubai Most Luxury Metal Fencing Design Service",
+      subDescription:"Our metal fencing solutions offer the perfect blend of security, durability, and aesthetic appeal, customized for Dubai's luxury properties. ",
+      
+      },
+    
   ];
 
   const scrollContainerHandler = (direction) => {
@@ -128,6 +211,8 @@ const ServiceSection = () => {
                     title: service.title,
                     image: service.image,
                     description: service.description,
+                    subTitle: service.subTitle,
+                    subDescription: service.subDescription,
                   },
                 })
               }
@@ -139,12 +224,10 @@ const ServiceSection = () => {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
-              >
-                
-              </div>
+              ></div>
               <div className="p-4 2xl:p-10 z-10 text-left">
                 <h3
-                  className={`text-lg md:text-2xl 2xl:text-4xl font-semibold mb-2 text-white text-left `}
+                  className={`text-lg md:text-2xl ${service.width}  2xl:text-4xl font-semibold mb-2 text-white text-left `}
                 >
                   {service.title}
                 </h3>

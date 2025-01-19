@@ -154,11 +154,12 @@ const Header = () => {
                 >
                   Services
                 </Link>
-                <ul className="absolute hidden group-hover:flex flex-col bg-white border border-gray-300 shadow-lg mt-0 rounded-md z-50 w-[300px]"
+                <ul className="absolute hidden text-white group-hover:flex flex-col bg-black border border-gray-300 shadow-lg mt-0 rounded-md z-50 w-[300px]"
                 style={{ zIndex: 9999 }}
                 >
                   {allServices.map((service) => (
                     <li
+                    style={{ zIndex: 9999 }}
                       key={service.id}
                       onClick={() =>
                         navigate("/service-detail", {
@@ -170,7 +171,7 @@ const Header = () => {
                           },
                         })
                       }
-                      className="block py-2 px-4 hover:bg-gray-200 cursor-pointer"
+                      className="block py-2 px-4 rounded-md z-40 hover:bg-gray-600  cursor-pointer"
                     >
                       {service.title}
                     </li>

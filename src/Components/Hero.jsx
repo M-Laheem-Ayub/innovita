@@ -10,37 +10,39 @@ import H6 from "../assets/Hero/H6.webp";
 const HeroSection = () => {
   const images = [H1, H2, H3, H4, H5, H6];
   const texts = [
+   
     {
-      title: "Adjustable Louvered Pergolas",
-      description:
-        "Flexible shading with adjustable, rust-resistant louvers. Includes motorized options and reduces heat by up to 40%.",
+        title: "Designing & Layouts",
+        description:
+            "From 2D floor plans to 3D renderings, we create detailed designs that bring your vision to life. Our expertise spans interior and exterior design, ensuring functionality, aesthetics, and sustainability in every project.",
     },
     {
-      title: "Fixed Louver Pergolas",
-      description:
-        "Stylish, permanent shading solution with durable aluminum louvers. Offers 40% heat reduction and requires minimal maintenance.",
+        title: "Custom Pergolas & Outdoor Structures",
+        description:
+            "Elevate your outdoor space with our advanced, custom-made pergolas, including automatic rotating louvers, CNC-cut designs, and enclosed waterproof structures and luxury glass rooms. We provide practical and beautiful solutions that adapt to your needs.",
     },
     {
-      title: "Motorized Screens and Blinds",
-      description:
-        "Remote-controlled screens for privacy and weather protection. Customizable, durable design reduces heat by 35%.",
+        title: "Metal Structural Works",
+        description:
+            "Our team specializes in providing robust and durable metal structural solutions for residential and commercial projects. From steel fabrication to welding and installation, we deliver high-quality results with precision.",
     },
     {
-      title: "Aluminum Pergolas and Canopies",
-      description:
-        "Illuminate your space with thoughtfully designed lighting that enhances both the functionality and ambiance of each room.",
+        title: "MEP Drawings & Approvals",
+        description:
+            "Our experienced team handles all MEP (Mechanical, Electrical, Plumbing) designs and layouts, ensuring your building's systems are efficient, compliant with UAE regulations, and seamlessly integrated into your overall design.",
     },
     {
-      title: "Outdoor Shading Solutions",
-      description:
-        "Motorized roofs for instant sun protection or open sky. Durable, modern design reduces heat by 40% and suits any outdoor space.",
+        title: "Sustainability Design Solutions",
+        description:
+            "Adopting the UAE's green building concepts, we offer eco-friendly design options, such as energy-efficient systems, water conservation features, and sustainable material selections that help reduce your environmental impact.",
     },
     {
-      title: "Car Parking Sheds",
-      description:
-        "Weather-resistant sheds with customizable sizes for vehicle protection. Reduces heat by 30% and ensures a cooler car interior.",
+        title: "Awnings & Shading Solutions",
+        description:
+            "Enjoy the outdoors in comfort with our wide range of custom-made awnings. From retractable designs to fixed, motorized, and cantilevered options, we provide shade solutions that are both functional and stylish.",
     },
-  ];
+];
+
 
   const [bgImageIndex, setBgImageIndex] = useState(0); // Index for the current background image
   const [textIndex, setTextIndex] = useState(0); // Index for the current text

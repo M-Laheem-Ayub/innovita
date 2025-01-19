@@ -7,13 +7,14 @@ import AboutUs from "../Components/About";
 import ContactUs from "../Components/ContactForm";
 import Testimonial from "../Components/Testimonial";
 import CoreServics from "../Components/CoreServics";
+import WhyChooseSection from "../Components/WhyChoose";
 
 function HomePage() {
   return (
     <div>
       <HeroSection />
-      <CoreServics/>
       <ServiceSection />
+      <WhyChooseSection/>
       <PortfolioGallery />
       <HowWeDeliverSection />
       <AboutUs />
